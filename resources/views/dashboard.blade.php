@@ -1,662 +1,1001 @@
 @extends('layouts.default')
 @section('content')
-
-<div class="nk-content ">
-    <div class="container-fluid">
-        <div class="nk-content-inner">
-            <div class="nk-content-body">
-                <div class="nk-block-head nk-block-head-sm">
-                    <div class="nk-block-between">
-                        <div class="nk-block-head-content">
-                            <h3 class="nk-block-title page-title">Sales Overview</h3>
-                            <div class="nk-block-des text-soft">
-                                <p>Welcome to DashLite Dashboard Template.</p>
+<div class="nk-content-body">
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between">
+            <div class="nk-block-head-content">
+                <h3 class="nk-block-title page-title">Users Lists</h3>
+                <div class="nk-block-des text-soft">
+                    <p>You have total 2,595 users.</p>
+                </div>
+            </div><!-- .nk-block-head-content -->
+            <div class="nk-block-head-content">
+                <div class="toggle-wrap nk-block-tools-toggle">
+                    <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
+                    <div class="toggle-expand-content" data-content="pageMenu">
+                        <ul class="nk-block-tools g-3">
+                            <li><a href="#" class="btn btn-white btn-outline-light"><em class="icon ni ni-download-cloud"></em><span>Export</span></a></li>
+                            <li class="nk-block-tools-opt">
+                                <div class="drodown">
+                                    <a href="#" class="dropdown-toggle btn btn-icon btn-primary" data-toggle="dropdown"><em class="icon ni ni-plus"></em></a>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <ul class="link-list-opt no-bdr">
+                                            <li><a href="#"><span>Add User</span></a></li>
+                                            <li><a href="#"><span>Add Team</span></a></li>
+                                            <li><a href="#"><span>Import User</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- .toggle-wrap -->
+            </div><!-- .nk-block-head-content -->
+        </div><!-- .nk-block-between -->
+    </div><!-- .nk-block-head -->
+    <div class="nk-block">
+        <div class="card card-bordered card-stretch">
+            <div class="card-inner-group">
+                <div class="card-inner position-relative card-tools-toggle">
+                    <div class="card-title-group">
+                        <div class="card-tools">
+                            <div class="form-inline flex-nowrap gx-3">
+                                <div class="form-wrap w-150px">
+                                    <select class="form-select select2-hidden-accessible" data-search="off" data-placeholder="Bulk Action" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <option value="" data-select2-id="3">Bulk Action</option>
+                                        <option value="email">Send Email</option>
+                                        <option value="group">Change Group</option>
+                                        <option value="suspend">Suspend User</option>
+                                        <option value="delete">Delete User</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="2" style="width: 113px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-iafg-container"><span class="select2-selection__rendered" id="select2-iafg-container" role="textbox" aria-readonly="true"><span class="select2-selection__placeholder">Bulk Action</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                                <div class="btn-wrap">
+                                    <span class="d-none d-md-block"><button class="btn btn-dim btn-outline-light disabled">Apply</button></span>
+                                    <span class="d-md-none"><button class="btn btn-dim btn-outline-light btn-icon disabled"><em class="icon ni ni-arrow-right"></em></button></span>
+                                </div>
+                            </div><!-- .form-inline -->
+                        </div><!-- .card-tools -->
+                        <div class="card-tools mr-n1">
+                            <ul class="btn-toolbar gx-1">
+                                <li>
+                                    <a href="#" class="btn btn-icon search-toggle toggle-search" data-target="search"><em class="icon ni ni-search"></em></a>
+                                </li><!-- li -->
+                                <li class="btn-toolbar-sep"></li><!-- li -->
+                                <li>
+                                    <div class="toggle-wrap">
+                                        <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-menu-right"></em></a>
+                                        <div class="toggle-content" data-content="cardTools">
+                                            <ul class="btn-toolbar gx-1">
+                                                <li class="toggle-close">
+                                                    <a href="#" class="btn btn-icon btn-trigger toggle" data-target="cardTools"><em class="icon ni ni-arrow-left"></em></a>
+                                                </li><!-- li -->
+                                                <li>
+                                                    <div class="dropdown">
+                                                        <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-toggle="dropdown">
+                                                            <div class="dot dot-primary"></div>
+                                                            <em class="icon ni ni-filter-alt"></em>
+                                                        </a>
+                                                        <div class="filter-wg dropdown-menu dropdown-menu-xl dropdown-menu-right">
+                                                            <div class="dropdown-head">
+                                                                <span class="sub-title dropdown-title">Filter Users</span>
+                                                            </div>
+                                                            <div class="dropdown-body dropdown-body-rg">
+                                                                <div class="row gx-6 gy-3">
+                                                                    <div class="col-6">
+                                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="hasBalance">
+                                                                            <label class="custom-control-label" for="hasBalance"> Have Balance</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="custom-control custom-control-sm custom-checkbox">
+                                                                            <input type="checkbox" class="custom-control-input" id="hasKYC">
+                                                                            <label class="custom-control-label" for="hasKYC"> KYC Verified</label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group">
+                                                                            <label class="overline-title overline-title-alt">Role</label>
+                                                                            <select class="form-select select2-hidden-accessible" data-select2-id="4" tabindex="-1" aria-hidden="true">
+                                                                                <option value="any" data-select2-id="6">Any Role</option>
+                                                                                <option value="investor">Investor</option>
+                                                                                <option value="seller">Seller</option>
+                                                                                <option value="buyer">Buyer</option>
+                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="5" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-br9p-container"><span class="select2-selection__rendered" id="select2-br9p-container" role="textbox" aria-readonly="true" title="Any Role">Any Role</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group">
+                                                                            <label class="overline-title overline-title-alt">Status</label>
+                                                                            <select class="form-select select2-hidden-accessible" data-select2-id="7" tabindex="-1" aria-hidden="true">
+                                                                                <option value="any" data-select2-id="9">Any Status</option>
+                                                                                <option value="active">Active</option>
+                                                                                <option value="pending">Pending</option>
+                                                                                <option value="suspend">Suspend</option>
+                                                                                <option value="deleted">Deleted</option>
+                                                                            </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="8" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-nbsv-container"><span class="select2-selection__rendered" id="select2-nbsv-container" role="textbox" aria-readonly="true" title="Any Status">Any Status</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-12">
+                                                                        <div class="form-group">
+                                                                            <button type="button" class="btn btn-secondary">Filter</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="dropdown-foot between">
+                                                                <a class="clickable" href="#">Reset Filter</a>
+                                                                <a href="#">Save Filter</a>
+                                                            </div>
+                                                        </div><!-- .filter-wg -->
+                                                    </div><!-- .dropdown -->
+                                                </li><!-- li -->
+                                                <li>
+                                                    <div class="dropdown">
+                                                        <a href="#" class="btn btn-trigger btn-icon dropdown-toggle" data-toggle="dropdown">
+                                                            <em class="icon ni ni-setting"></em>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+                                                            <ul class="link-check">
+                                                                <li><span>Show</span></li>
+                                                                <li class="active"><a href="#">10</a></li>
+                                                                <li><a href="#">20</a></li>
+                                                                <li><a href="#">50</a></li>
+                                                            </ul>
+                                                            <ul class="link-check">
+                                                                <li><span>Order</span></li>
+                                                                <li class="active"><a href="#">DESC</a></li>
+                                                                <li><a href="#">ASC</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!-- .dropdown -->
+                                                </li><!-- li -->
+                                            </ul><!-- .btn-toolbar -->
+                                        </div><!-- .toggle-content -->
+                                    </div><!-- .toggle-wrap -->
+                                </li><!-- li -->
+                            </ul><!-- .btn-toolbar -->
+                        </div><!-- .card-tools -->
+                    </div><!-- .card-title-group -->
+                    <div class="card-search search-wrap" data-search="search">
+                        <div class="card-body">
+                            <div class="search-content">
+                                <a href="#" class="search-back btn btn-icon toggle-search" data-target="search"><em class="icon ni ni-arrow-left"></em></a>
+                                <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search by user or email">
+                                <button class="search-submit btn btn-icon"><em class="icon ni ni-search"></em></button>
                             </div>
-                        </div><!-- .nk-block-head-content -->
-                        <div class="nk-block-head-content">
-                            <div class="toggle-wrap nk-block-tools-toggle">
-                                <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
-                                <div class="toggle-expand-content" data-content="pageMenu">
-                                    <ul class="nk-block-tools g-3">
-                                        <li>
-                                            <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle btn btn-white btn-dim btn-outline-light" data-toggle="dropdown"><em class="d-none d-sm-inline icon ni ni-calender-date"></em><span><span class="d-none d-md-inline">Last</span> 30 Days</span><em class="dd-indc icon ni ni-chevron-right"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><span>Last 30 Days</span></a></li>
-                                                        <li><a href="#"><span>Last 6 Months</span></a></li>
-                                                        <li><a href="#"><span>Last 1 Years</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="nk-block-tools-opt"><a href="#" class="btn btn-primary"><em class="icon ni ni-reports"></em><span>Reports</span></a></li>
-                                    </ul>
+                        </div>
+                    </div><!-- .card-search -->
+                </div><!-- .card-inner -->
+                <div class="card-inner p-0">
+                    <div class="nk-tb-list nk-tb-ulist">
+                        <div class="nk-tb-item nk-tb-head">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid">
+                                    <label class="custom-control-label" for="uid"></label>
                                 </div>
                             </div>
-                        </div><!-- .nk-block-head-content -->
-                    </div><!-- .nk-block-between -->
-                </div><!-- .nk-block-head -->
-                <div class="nk-block">
-                    <div class="row g-gs">
-                        <div class="col-xxl-6">
-                            <div class="row g-gs">
-                                <div class="col-lg-6 col-xxl-12">
-                                    <div class="card card-bordered">
-                                        <div class="card-inner">
-                                            <div class="card-title-group align-start mb-2">
-                                                <div class="card-title">
-                                                    <h6 class="title">Sales Revenue</h6>
-                                                    <p>In last 30 days revenue from subscription.</p>
-                                                </div>
-                                                <div class="card-tools">
-                                                    <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="" data-original-title="Revenue from subscription"></em>
-                                                </div>
-                                            </div>
-                                            <div class="align-end gy-3 gx-5 flex-wrap flex-md-nowrap flex-lg-wrap flex-xxl-nowrap">
-                                                <div class="nk-sale-data-group flex-md-nowrap g-4">
-                                                    <div class="nk-sale-data">
-                                                        <span class="amount">14,299.59 <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>16.93%</span></span>
-                                                        <span class="sub-title">This Month</span>
-                                                    </div>
-                                                    <div class="nk-sale-data">
-                                                        <span class="amount">7,299.59 <span class="change up text-success"><em class="icon ni ni-arrow-long-up"></em>4.26%</span></span>
-                                                        <span class="sub-title">This Week</span>
-                                                    </div>
-                                                </div>
-                                                <div class="nk-sales-ck sales-revenue"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                                    <canvas class="sales-bar-chart chartjs-render-monitor" id="salesRevenue" style="display: block; width: 405px; height: 148px;" width="405" height="148"></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!-- .col -->
-                                <div class="col-lg-6 col-xxl-12">
-                                    <div class="row g-gs">
-                                        <div class="col-sm-6 col-lg-12 col-xxl-6">
-                                            <div class="card card-bordered">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-2">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Active Subscriptions</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="" data-original-title="Total active subscription"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="align-end flex-sm-wrap g-4 flex-md-nowrap">
-                                                        <div class="nk-sale-data">
-                                                            <span class="amount">9.69K</span>
-                                                            <span class="sub-title"><span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>since last month</span>
-                                                        </div>
-                                                        <div class="nk-sales-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                                            <canvas class="sales-bar-chart chartjs-render-monitor" id="activeSubscription" width="240" height="56" style="display: block; width: 240px; height: 56px;"></canvas>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                        <div class="col-sm-6 col-lg-12 col-xxl-6">
-                                            <div class="card card-bordered">
-                                                <div class="card-inner">
-                                                    <div class="card-title-group align-start mb-2">
-                                                        <div class="card-title">
-                                                            <h6 class="title">Avg Subscriptions</h6>
-                                                        </div>
-                                                        <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-toggle="tooltip" data-placement="left" title="" data-original-title="Daily Avg. subscription"></em>
-                                                        </div>
-                                                    </div>
-                                                    <div class="align-end flex-sm-wrap g-4 flex-md-nowrap">
-                                                        <div class="nk-sale-data">
-                                                            <span class="amount">346.2</span>
-                                                            <span class="sub-title"><span class="change up text-success"><em class="icon ni ni-arrow-long-up"></em>2.45%</span>since last week</span>
-                                                        </div>
-                                                        <div class="nk-sales-ck"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                                            <canvas class="sales-bar-chart chartjs-render-monitor" id="totalSubscription" width="247" height="56" style="display: block; width: 247px; height: 56px;"></canvas>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div><!-- .card -->
-                                        </div><!-- .col -->
-                                    </div><!-- .row -->
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .col -->
-                        <div class="col-xxl-6">
-                            <div class="card card-bordered h-100">
-                                <div class="card-inner">
-                                    <div class="card-title-group align-start gx-3 mb-3">
-                                        <div class="card-title">
-                                            <h6 class="title">Sales Overview</h6>
-                                            <p>In 30 days sales of product subscription. <a href="#">See Details</a></p>
-                                        </div>
-                                        <div class="card-tools">
-                                            <div class="dropdown">
-                                                <a href="#" class="btn btn-primary btn-dim d-none d-sm-inline-flex" data-toggle="dropdown"><em class="icon ni ni-download-cloud"></em><span><span class="d-none d-md-inline">Download</span> Report</span></a>
-                                                <a href="#" class="btn btn-icon btn-primary btn-dim d-sm-none" data-toggle="dropdown"><em class="icon ni ni-download-cloud"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#"><span>Download Mini Version</span></a></li>
-                                                        <li><a href="#"><span>Download Full Version</span></a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a href="#"><em class="icon ni ni-opt-alt"></em><span>More Options</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="nk-sale-data-group align-center justify-between gy-3 gx-5">
-                                        <div class="nk-sale-data">
-                                            <span class="amount">$82,944.60</span>
-                                        </div>
-                                        <div class="nk-sale-data">
-                                            <span class="amount sm">1,937 <small>Subscribers</small></span>
-                                        </div>
-                                    </div>
-                                    <div class="nk-sales-ck large pt-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                        <canvas class="sales-overview-chart chartjs-render-monitor" id="salesOverview" width="887" height="176" style="display: block; width: 887px; height: 176px;"></canvas>
-                                    </div>
-                                </div>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                        <div class="col-xxl-8">
-                            <div class="card card-bordered card-full">
-                                <div class="card-inner">
-                                    <div class="card-title-group">
-                                        <div class="card-title">
-                                            <h6 class="title"><span class="mr-2">Transaction</span> <a href="#" class="link d-none d-sm-inline">See History</a></h6>
-                                        </div>
-                                        <div class="card-tools">
-                                            <ul class="card-tools-nav">
-                                                <li><a href="#"><span>Paid</span></a></li>
-                                                <li><a href="#"><span>Pending</span></a></li>
-                                                <li class="active"><a href="#"><span>All</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-inner p-0 border-top">
-                                    <div class="nk-tb-list nk-tb-orders">
-                                        <div class="nk-tb-item nk-tb-head">
-                                            <div class="nk-tb-col"><span>Order No.</span></div>
-                                            <div class="nk-tb-col tb-col-sm"><span>Customer</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span>Date</span></div>
-                                            <div class="nk-tb-col tb-col-lg"><span>Ref</span></div>
-                                            <div class="nk-tb-col"><span>Amount</span></div>
-                                            <div class="nk-tb-col"><span class="d-none d-sm-inline">Status</span></div>
-                                            <div class="nk-tb-col"><span>&nbsp;</span></div>
-                                        </div>
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <span class="tb-lead"><a href="#">#95954</a></span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-sm">
-                                                <div class="user-card">
-                                                    <div class="user-avatar user-avatar-sm bg-purple">
-                                                        <span>AB</span>
-                                                    </div>
-                                                    <div class="user-name">
-                                                        <span class="tb-lead">Abu Bin Ishtiyak</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-sub">02/11/2020</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-sub text-primary">SUB-2309232</span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="tb-sub tb-amount">4,596.75 <span>USD</span></span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="badge badge-dot badge-dot-xs badge-success">Paid</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-action">
-                                                <div class="dropdown">
-                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                        <ul class="link-list-plain">
-                                                            <li><a href="#">View</a></li>
-                                                            <li><a href="#">Invoice</a></li>
-                                                            <li><a href="#">Print</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <span class="tb-lead"><a href="#">#95850</a></span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-sm">
-                                                <div class="user-card">
-                                                    <div class="user-avatar user-avatar-sm bg-azure">
-                                                        <span>DE</span>
-                                                    </div>
-                                                    <div class="user-name">
-                                                        <span class="tb-lead">Desiree Edwards</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-sub">02/02/2020</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-sub text-primary">SUB-2309154</span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="tb-sub tb-amount">596.75 <span>USD</span></span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="badge badge-dot badge-dot-xs badge-danger">Canceled</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-action">
-                                                <div class="dropdown">
-                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                        <ul class="link-list-plain">
-                                                            <li><a href="#">View</a></li>
-                                                            <li><a href="#">Remove</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <span class="tb-lead"><a href="#">#95812</a></span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-sm">
-                                                <div class="user-card">
-                                                    <div class="user-avatar user-avatar-sm bg-warning">
-                                                        <img src="./images/avatar/b-sm.jpg" alt="">
-                                                    </div>
-                                                    <div class="user-name">
-                                                        <span class="tb-lead">Blanca Schultz</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-sub">02/01/2020</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-sub text-primary">SUB-2309143</span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="tb-sub tb-amount">199.99 <span>USD</span></span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="badge badge-dot badge-dot-xs badge-success">Paid</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-action">
-                                                <div class="dropdown">
-                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                        <ul class="link-list-plain">
-                                                            <li><a href="#">View</a></li>
-                                                            <li><a href="#">Invoice</a></li>
-                                                            <li><a href="#">Print</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <span class="tb-lead"><a href="#">#95256</a></span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-sm">
-                                                <div class="user-card">
-                                                    <div class="user-avatar user-avatar-sm bg-purple">
-                                                        <span>NL</span>
-                                                    </div>
-                                                    <div class="user-name">
-                                                        <span class="tb-lead">Naomi Lawrence</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-sub">01/29/2020</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-sub text-primary">SUB-2305684</span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="tb-sub tb-amount">1099.99 <span>USD</span></span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="badge badge-dot badge-dot-xs badge-success">Paid</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-action">
-                                                <div class="dropdown">
-                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                        <ul class="link-list-plain">
-                                                            <li><a href="#">View</a></li>
-                                                            <li><a href="#">Invoice</a></li>
-                                                            <li><a href="#">Print</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col">
-                                                <span class="tb-lead"><a href="#">#95135</a></span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-sm">
-                                                <div class="user-card">
-                                                    <div class="user-avatar user-avatar-sm bg-success">
-                                                        <span>CH</span>
-                                                    </div>
-                                                    <div class="user-name">
-                                                        <span class="tb-lead">Cassandra Hogan</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-sub">01/29/2020</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span class="tb-sub text-primary">SUB-2305564</span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="tb-sub tb-amount">1099.99 <span>USD</span></span>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <span class="badge badge-dot badge-dot-xs badge-warning">Due</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-action">
-                                                <div class="dropdown">
-                                                    <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs">
-                                                        <ul class="link-list-plain">
-                                                            <li><a href="#">View</a></li>
-                                                            <li><a href="#">Invoice</a></li>
-                                                            <li><a href="#">Notify</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-inner-sm border-top text-center d-sm-none">
-                                    <a href="#" class="btn btn-link btn-block">See History</a>
-                                </div>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                        <div class="col-md-6 col-xxl-4">
-                            <div class="card card-bordered card-full">
-                                <div class="card-inner border-bottom">
-                                    <div class="card-title-group">
-                                        <div class="card-title">
-                                            <h6 class="title">Recent Activities</h6>
-                                        </div>
-                                        <div class="card-tools">
-                                            <ul class="card-tools-nav">
-                                                <li><a href="#"><span>Cancel</span></a></li>
-                                                <li class="active"><a href="#"><span>All</span></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="nk-activity">
-                                    <li class="nk-activity-item">
-                                        <div class="nk-activity-media user-avatar bg-success"><img src="./images/avatar/c-sm.jpg" alt=""></div>
-                                        <div class="nk-activity-data">
-                                            <div class="label">Keith Jensen requested to Widthdrawl.</div>
-                                            <span class="time">2 hours ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-activity-item">
-                                        <div class="nk-activity-media user-avatar bg-warning">HS</div>
-                                        <div class="nk-activity-data">
-                                            <div class="label">Harry Simpson placed a Order.</div>
-                                            <span class="time">2 hours ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-activity-item">
-                                        <div class="nk-activity-media user-avatar bg-azure">SM</div>
-                                        <div class="nk-activity-data">
-                                            <div class="label">Stephanie Marshall got a huge bonus.</div>
-                                            <span class="time">2 hours ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-activity-item">
-                                        <div class="nk-activity-media user-avatar bg-purple"><img src="./images/avatar/d-sm.jpg" alt=""></div>
-                                        <div class="nk-activity-data">
-                                            <div class="label">Nicholas Carr deposited funds.</div>
-                                            <span class="time">2 hours ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-activity-item">
-                                        <div class="nk-activity-media user-avatar bg-pink">TM</div>
-                                        <div class="nk-activity-data">
-                                            <div class="label">Timothy Moreno placed a Order.</div>
-                                            <span class="time">2 hours ago</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                        <div class="col-md-6 col-xxl-4">
-                            <div class="card card-bordered card-full">
-                                <div class="card-inner-group">
-                                    <div class="card-inner">
-                                        <div class="card-title-group">
-                                            <div class="card-title">
-                                                <h6 class="title">New Users</h6>
-                                            </div>
-                                            <div class="card-tools">
-                                                <a href="html/user-list-regular.html" class="link">View All</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-inner card-inner-md">
-                                        <div class="user-card">
-                                            <div class="user-avatar bg-primary-dim">
-                                                <span>AB</span>
-                                            </div>
-                                            <div class="user-info">
-                                                <span class="lead-text">Abu Bin Ishtiyak</span>
-                                                <span class="sub-text">info@softnio.com</span>
-                                            </div>
-                                            <div class="user-action">
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-inner card-inner-md">
-                                        <div class="user-card">
-                                            <div class="user-avatar bg-pink-dim">
-                                                <span>SW</span>
-                                            </div>
-                                            <div class="user-info">
-                                                <span class="lead-text">Sharon Walker</span>
-                                                <span class="sub-text">sharon-90@example.com</span>
-                                            </div>
-                                            <div class="user-action">
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-inner card-inner-md">
-                                        <div class="user-card">
-                                            <div class="user-avatar bg-warning-dim">
-                                                <span>GO</span>
-                                            </div>
-                                            <div class="user-info">
-                                                <span class="lead-text">Gloria Oliver</span>
-                                                <span class="sub-text">gloria_72@example.com</span>
-                                            </div>
-                                            <div class="user-action">
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-inner card-inner-md">
-                                        <div class="user-card">
-                                            <div class="user-avatar bg-success-dim">
-                                                <span>PS</span>
-                                            </div>
-                                            <div class="user-info">
-                                                <span class="lead-text">Phillip Sullivan</span>
-                                                <span class="sub-text">phillip-85@example.com</span>
-                                            </div>
-                                            <div class="user-action">
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle btn btn-icon btn-trigger mr-n1" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><em class="icon ni ni-setting"></em><span>Action Settings</span></a></li>
-                                                            <li><a href="#"><em class="icon ni ni-notify"></em><span>Push Notification</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                        <div class="col-lg-6 col-xxl-4">
-                            <div class="card card-bordered h-100">
-                                <div class="card-inner border-bottom">
-                                    <div class="card-title-group">
-                                        <div class="card-title">
-                                            <h6 class="title">Support Requests</h6>
-                                        </div>
-                                        <div class="card-tools">
-                                            <a href="#" class="link">All Tickets</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="nk-support">
-                                    <li class="nk-support-item">
-                                        <div class="user-avatar">
-                                            <img src="./images/avatar/a-sm.jpg" alt="">
-                                        </div>
-                                        <div class="nk-support-content">
-                                            <div class="title">
-                                                <span>Vincent Lopez</span><span class="badge badge-dot badge-dot-xs badge-warning ml-1">Pending</span>
-                                            </div>
-                                            <p>Thanks for contact us with your issues...</p>
-                                            <span class="time">6 min ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-support-item">
-                                        <div class="user-avatar bg-purple-dim">
-                                            <span>DM</span>
-                                        </div>
-                                        <div class="nk-support-content">
-                                            <div class="title">
-                                                <span>Daniel Moore</span><span class="badge badge-dot badge-dot-xs badge-info ml-1">Open</span>
-                                            </div>
-                                            <p>Thanks for contact us with your issues...</p>
-                                            <span class="time">2 Hours ago</span>
-                                        </div>
-                                    </li>
-                                    <li class="nk-support-item">
-                                        <div class="user-avatar">
-                                            <img src="./images/avatar/b-sm.jpg" alt="">
-                                        </div>
-                                        <div class="nk-support-content">
-                                            <div class="title">
-                                                <span>Larry Henry</span><span class="badge badge-dot badge-dot-xs badge-success ml-1">Solved</span>
-                                            </div>
-                                            <p>Thanks for contact us with your issues...</p>
-                                            <span class="time">3 Hours ago</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                        <div class="col-lg-6 col-xxl-4">
-                            <div class="card card-bordered h-100">
-                                <div class="card-inner border-bottom">
-                                    <div class="card-title-group">
-                                        <div class="card-title">
-                                            <h6 class="title">Notifications</h6>
-                                        </div>
-                                        <div class="card-tools">
-                                            <a href="#" class="link">View All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-inner">
-                                    <div class="timeline">
-                                        <h6 class="timeline-head">November, 2019</h6>
-                                        <ul class="timeline-list">
-                                            <li class="timeline-item">
-                                                <div class="timeline-status bg-primary is-outline"></div>
-                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                <div class="timeline-data">
-                                                    <h6 class="timeline-title">Submited KYC Application</h6>
-                                                    <div class="timeline-des">
-                                                        <p>Re-submitted KYC Application form.</p>
-                                                        <span class="time">09:30am</span>
-                                                    </div>
+                            <div class="nk-tb-col"><span class="sub-text">User</span></div>
+                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Balance</span></div>
+                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Phone</span></div>
+                            <div class="nk-tb-col tb-col-lg"><span class="sub-text">Verified</span></div>
+                            <div class="nk-tb-col tb-col-lg"><span class="sub-text">Last Login</span></div>
+                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
+                            <div class="nk-tb-col nk-tb-col-tools text-right">
+                                <div class="dropdown">
+                                    <a href="#" class="btn btn-xs btn-outline-light btn-icon dropdown-toggle" data-toggle="dropdown" data-offset="0,5"><em class="icon ni ni-plus"></em></a>
+                                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-right">
+                                        <ul class="link-tidy sm no-bdr">
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox checked">
+                                                    <input type="checkbox" class="custom-control-input" checked="" id="bl">
+                                                    <label class="custom-control-label" for="bl">Balance</label>
                                                 </div>
                                             </li>
-                                            <li class="timeline-item">
-                                                <div class="timeline-status bg-primary"></div>
-                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                <div class="timeline-data">
-                                                    <h6 class="timeline-title">Submited KYC Application</h6>
-                                                    <div class="timeline-des">
-                                                        <p>Re-submitted KYC Application form.</p>
-                                                        <span class="time">09:30am</span>
-                                                    </div>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox checked">
+                                                    <input type="checkbox" class="custom-control-input" checked="" id="ph">
+                                                    <label class="custom-control-label" for="ph">Phone</label>
                                                 </div>
                                             </li>
-                                            <li class="timeline-item">
-                                                <div class="timeline-status bg-pink"></div>
-                                                <div class="timeline-date">13 Nov <em class="icon ni ni-alarm-alt"></em></div>
-                                                <div class="timeline-data">
-                                                    <h6 class="timeline-title">Submited KYC Application</h6>
-                                                    <div class="timeline-des">
-                                                        <p>Re-submitted KYC Application form.</p>
-                                                        <span class="time">09:30am</span>
-                                                    </div>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="vri">
+                                                    <label class="custom-control-label" for="vri">Verified</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="custom-control custom-control-sm custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="st">
+                                                    <label class="custom-control-label" for="st">Status</label>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                            </div><!-- .card -->
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                </div><!-- .nk-block -->
-            </div>
-        </div>
-    </div>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid1">
+                                    <label class="custom-control-label" for="uid1"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <a href="html/user-details-regular.html">
+                                    <div class="user-card">
+                                        <div class="user-avatar bg-primary">
+                                            <span>AB</span>
+                                        </div>
+                                        <div class="user-info">
+                                            <span class="tb-lead">Abu Bin Ishtiyak <span class="dot dot-success d-md-none ml-1"></span></span>
+                                            <span>info@softnio.com</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">35,040.34 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+811 847-4958</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon ni ni-alert-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>10 Feb 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid2">
+                                    <label class="custom-control-label" for="uid2"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar">
+                                        <img src="./images/avatar/a-sm.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Ashley Lawson <span class="dot dot-warning d-md-none ml-1"></span></span>
+                                        <span>ashley@softnio.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">580.00 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+124 394-1787</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>07 Feb 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-warning">Pending</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid3">
+                                    <label class="custom-control-label" for="uid3"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar bg-info">
+                                        <span>JL</span>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Joe Larson <span class="dot dot-success d-md-none ml-1"></span></span>
+                                        <span>larson@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">32,000.34 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+168 603-2320</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>04 Feb 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid4">
+                                    <label class="custom-control-label" for="uid4"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar bg-danger">
+                                        <span>JM</span>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Jane Montgomery <span class="dot dot-danger d-md-none ml-1"></span></span>
+                                        <span>jane84@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">0.00 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+439 271-5360</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon ni ni-alert-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon ni ni-alert-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>01 Feb 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-danger">Suspend</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid5">
+                                    <label class="custom-control-label" for="uid5"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar">
+                                        <img src="./images/avatar/b-sm.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Frances Burns <span class="dot dot-success d-md-none ml-1"></span></span>
+                                        <span>frances@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">42.50 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+639 130-3150</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>Email</span></li>
+                                    <li><em class="icon ni ni-alert-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>31 Jan 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid6">
+                                    <label class="custom-control-label" for="uid6"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar">
+                                        <img src="./images/avatar/c-sm.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Alan Butler <span class="dot dot-info d-md-none ml-1"></span></span>
+                                        <span>butler@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">440.34 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+963 309-1706</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>Email</span></li>
+                                    <li><em class="icon text-warning ni ni-alert-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>18 Jan 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-info">Inactive</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid7">
+                                    <label class="custom-control-label" for="uid7"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar bg-warning">
+                                        <span>VL</span>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Victoria Lynch <span class="dot dot-success d-md-none ml-1"></span></span>
+                                        <span>victoria@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">59,400.68 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+811 985-4846</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>15 Jan 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid8">
+                                    <label class="custom-control-label" for="uid8"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar bg-success">
+                                        <span>PN</span>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Patrick Newman <span class="dot dot-success d-md-none ml-1"></span></span>
+                                        <span>patrick@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">30.00 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+942 238-4474</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>08 Jan 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid9">
+                                    <label class="custom-control-label" for="uid9"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar">
+                                        <img src="./images/avatar/d-sm.jpg" alt="">
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Jane Harris <span class="dot dot-warning d-md-none ml-1"></span></span>
+                                        <span>harris@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">5,530.23 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+123 447-2384</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>Email</span></li>
+                                    <li><em class="icon text-info ni ni-alarm-alt"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>02 Jan 2020</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-warning">Pending</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                        <div class="nk-tb-item">
+                            <div class="nk-tb-col nk-tb-col-check">
+                                <div class="custom-control custom-control-sm custom-checkbox notext">
+                                    <input type="checkbox" class="custom-control-input" id="uid10">
+                                    <label class="custom-control-label" for="uid10"></label>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col">
+                                <div class="user-card">
+                                    <div class="user-avatar bg-purple">
+                                        <span>EW</span>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="tb-lead">Emma Walker <span class="dot dot-success d-md-none ml-1"></span></span>
+                                        <span>walker@example.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-tb-col tb-col-mb">
+                                <span class="tb-amount">55.00 <span class="currency">USD</span></span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span>+463 471-7173</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <ul class="list-status">
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>Email</span></li>
+                                    <li><em class="icon text-success ni ni-check-circle"></em> <span>KYC</span></li>
+                                </ul>
+                            </div>
+                            <div class="nk-tb-col tb-col-lg">
+                                <span>25 Dec 2019</span>
+                            </div>
+                            <div class="nk-tb-col tb-col-md">
+                                <span class="tb-status text-success">Active</span>
+                            </div>
+                            <div class="nk-tb-col nk-tb-col-tools">
+                                <ul class="nk-tb-actions gx-1">
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Wallet">
+                                            <em class="icon ni ni-wallet-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Send Email">
+                                            <em class="icon ni ni-mail-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li class="nk-tb-action-hidden">
+                                        <a href="#" class="btn btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspend">
+                                            <em class="icon ni ni-user-cross-fill"></em>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="drodown">
+                                            <a href="#" class="dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <ul class="link-list-opt no-bdr">
+                                                    <li><a href="#"><em class="icon ni ni-focus"></em><span>Quick View</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-repeat"></em><span>Transaction</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-star"></em><span>Reset Pass</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-shield-off"></em><span>Reset 2FA</span></a></li>
+                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend User</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- .nk-tb-item -->
+                    </div><!-- .nk-tb-list -->
+                </div><!-- .card-inner -->
+                <div class="card-inner">
+                    <div class="nk-block-between-md g-3">
+                        <div class="g">
+                            <ul class="pagination justify-content-center justify-content-md-start">
+                                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item"><a class="page-link" href="#">7</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul><!-- .pagination -->
+                        </div>
+                        <div class="g">
+                            <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
+                                <div>Page</div>
+                                <div>
+                                    <select class="form-select select2-hidden-accessible" data-search="on" data-dropdown="xs center" data-select2-id="10" tabindex="-1" aria-hidden="true">
+                                        <option value="page-1" data-select2-id="12">1</option>
+                                        <option value="page-2">2</option>
+                                        <option value="page-4">4</option>
+                                        <option value="page-5">5</option>
+                                        <option value="page-6">6</option>
+                                        <option value="page-7">7</option>
+                                        <option value="page-8">8</option>
+                                        <option value="page-9">9</option>
+                                        <option value="page-10">10</option>
+                                        <option value="page-11">11</option>
+                                        <option value="page-12">12</option>
+                                        <option value="page-13">13</option>
+                                        <option value="page-14">14</option>
+                                        <option value="page-15">15</option>
+                                        <option value="page-16">16</option>
+                                        <option value="page-17">17</option>
+                                        <option value="page-18">18</option>
+                                        <option value="page-19">19</option>
+                                        <option value="page-20">20</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="11" style="width: 39px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-75dl-container"><span class="select2-selection__rendered" id="select2-75dl-container" role="textbox" aria-readonly="true" title="1">1</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                                <div>OF 102</div>
+                            </div>
+                        </div><!-- .pagination-goto -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .card-inner -->
+            </div><!-- .card-inner-group -->
+        </div><!-- .card -->
+    </div><!-- .nk-block -->
 </div>
-
 @endsection
